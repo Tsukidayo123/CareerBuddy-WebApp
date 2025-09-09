@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerBuddy - Job Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎯 CareerBuddy</h1>
+      <nav id="auth-nav">
+        <div id="user-info" class="hidden">
+          <span id="user-email"></span>
+          <a href="index.html" class="nav-link active">📋 Jobs</a>
+          <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+          <button id="logout-btn">Logout</button>
+        </div>
+        <div id="login-prompt" class="hidden">
+          <p>Welcome! Please <a href="login.html">login</a> to start tracking your career journey</p>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>📝 Add New Job</h2>
+        <p class="panel-subtitle">Found an interesting opportunity? Let's track it!</p>
+        <form id="job-form">
+          <div class="form-row">
+            <input id="job-title" placeholder="Job Title" required />
+            <input id="job-company" placeholder="Company Name" required />
+          </div>
+          <div class="form-row">
+            <input id="job-location" placeholder="Location (e.g., Remote, London)" />
+            <input id="job-url" placeholder="Job URL (optional)" />
+          </div>
+          <div class="form-row">
+            <select id="job-category" class="form-select">
+              <option value="">Select Category</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Full-stack">Full-stack</option>
+              <option value="DevOps">DevOps</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Mobile">Mobile</option>
+              <option value="Other">Other</option>
+            </select>
+            <select id="job-priority" class="form-select">
+              <option value="LOW">Low Priority</option>
+              <option value="MEDIUM" selected>Medium Priority</option>
+              <option value="HIGH">High Priority</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input id="job-salary" placeholder="Salary Range (e.g., £40k-£60k)" />
+            <input id="job-deadline" type="date" />
+          </div>
+          <textarea id="job-notes" placeholder="Notes about this job opportunity..."></textarea>
+          <button type="submit">✨ Add Job</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>💼 Your Jobs</h2>
+        <p class="panel-subtitle">All the opportunities you've saved</p>
+        
+        <!-- Search and Filter Controls -->
+        <div class="filter-controls">
+          <div class="search-box">
+            <input type="text" id="job-search" placeholder="🔍 Search jobs..." />
+          </div>
+          <div class="filter-row">
+            <select id="category-filter" class="filter-select">
+              <option value="">All Categories</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Full-stack">Full-stack</option>
+              <option value="DevOps">DevOps</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Mobile">Mobile</option>
+              <option value="Other">Other</option>
+            </select>
+            <select id="priority-filter" class="filter-select">
+              <option value="">All Priorities</option>
+              <option value="HIGH">High Priority</option>
+              <option value="MEDIUM">Medium Priority</option>
+              <option value="LOW">Low Priority</option>
+            </select>
+            <button id="clear-filters" class="clear-btn">Clear Filters</button>
+          </div>
+        </div>
+        
+        <ul id="jobs-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>🚀 My Applications</h2>
+        <p class="panel-subtitle">Track your progress on each application</p>
+        <ul id="apps-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built with FastAPI + Vanilla JS. Secure by default.</small>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
+
+

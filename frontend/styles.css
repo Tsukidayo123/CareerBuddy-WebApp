@@ -1,0 +1,131 @@
+:root{--bg:#0e1320;--panel:#151b2e;--text:#e6e9f2;--muted:#9aa3b2;--accent:#5b8cff;--ok:#22c55e;--warn:#f59e0b;--err:#ef4444}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.4}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #212844;background:#0f1526;position:sticky;top:0}
+h1{margin:0;font-size:20px;letter-spacing:.5px}
+nav form, #user-info{display:flex;gap:8px}
+input, textarea, button{border-radius:8px;border:1px solid #27304d;background:#0f1730;color:var(--text);padding:10px 12px}
+button{background:var(--accent);border-color:transparent;color:white;font-weight:600;cursor:pointer}
+button.secondary{background:transparent;border:1px solid #2a355a}
+.hidden{display:none}
+main{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px}
+.panel{background:var(--panel);border:1px solid #1e2744;border-radius:12px;padding:20px}
+.panel h2{margin:0 0 8px 0;font-size:18px;color:var(--text)}
+.panel-subtitle{color:var(--muted);font-size:14px;margin:0 0 20px 0;line-height:1.4}
+ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.card{display:flex;justify-content:space-between;gap:8px;background:#101836;border:1px solid #1d2747;border-radius:10px;padding:12px}
+.title{font-weight:700}
+.muted{color:var(--muted)}
+.status{padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid #2a355a}
+.SAVED{background:#0d1a2f}.APPLIED{background:#0d2f1a}.INTERVIEW{background:#2f2b0d}.OFFER{background:#0d2f28}.REJECTED{background:#2f0d12}
+footer{padding:16px 20px;border-top:1px solid #212844;color:var(--muted)}
+
+/* Auth pages */
+.auth-container{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-card{background:var(--panel);border:1px solid #1e2744;border-radius:12px;padding:32px;width:100%;max-width:400px}
+.auth-header{text-align:center;margin-bottom:24px}
+.auth-header h1{margin:0 0 8px 0;font-size:24px}
+.auth-header p{color:var(--muted);margin:0}
+.auth-form{display:flex;flex-direction:column;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-weight:600;color:var(--text)}
+.auth-button{width:100%;padding:12px;background:var(--accent);color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:background 0.2s}
+.auth-button:hover{background:#4a7cff}
+.auth-links{text-align:center;margin-top:16px}
+.auth-links a{color:var(--accent);text-decoration:none}
+.auth-links a:hover{text-decoration:underline}
+.error-message{background:#2f0d12;border:1px solid #ef4444;color:#fca5a5;padding:12px;border-radius:8px;margin-top:16px}
+.success-message{background:#0d2f1a;border:1px solid #22c55e;color:#86efac;padding:12px;border-radius:8px;margin-top:16px}
+
+/* Job form improvements */
+#job-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#job-form input, #job-form textarea, .form-select{width:100%;padding:12px;border-radius:8px;border:1px solid #27304d;background:#0f1730;color:var(--text);font-size:14px;transition:border-color 0.2s}
+#job-form input:focus, #job-form textarea:focus, .form-select:focus{outline:none;border-color:var(--accent)}
+#job-form textarea{min-height:80px;resize:vertical;font-family:inherit}
+#job-form button{padding:12px 24px;background:var(--accent);color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:background 0.2s;align-self:flex-start}
+#job-form button:hover{background:#4a7cff}
+
+/* Filter controls */
+.filter-controls{margin-bottom:20px;display:flex;flex-direction:column;gap:12px}
+.search-box{width:100%}
+#job-search{width:100%;padding:12px;border-radius:8px;border:1px solid #27304d;background:#0f1730;color:var(--text);font-size:14px;transition:border-color 0.2s}
+#job-search:focus{outline:none;border-color:var(--accent)}
+.filter-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:center}
+.filter-select{padding:8px 12px;border-radius:6px;border:1px solid #27304d;background:#0f1730;color:var(--text);font-size:14px;cursor:pointer}
+.filter-select:focus{outline:none;border-color:var(--accent)}
+.clear-btn{padding:8px 16px;background:transparent;border:1px solid #2a355a;color:var(--muted);border-radius:6px;cursor:pointer;font-size:14px;transition:all 0.2s}
+.clear-btn:hover{background:#1e2744;color:var(--text)}
+
+/* Dashboard styles */
+.dashboard-main{display:flex;flex-direction:column;gap:20px;padding:20px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin-bottom:20px}
+.stat-card{background:var(--panel);border:1px solid #1e2744;border-radius:12px;padding:20px;display:flex;align-items:center;gap:16px;transition:transform 0.2s}
+.stat-card:hover{transform:translateY(-2px)}
+.stat-icon{font-size:32px;opacity:0.8}
+.stat-content h3{margin:0;font-size:24px;font-weight:700;color:var(--accent)}
+.stat-content p{margin:4px 0 0 0;color:var(--muted);font-size:14px}
+.status-chart{margin-top:16px}
+.status-bar{display:flex;gap:8px;flex-wrap:wrap}
+.status-item{flex:1;min-width:120px;background:#101836;border:1px solid #1d2747;border-radius:8px;padding:12px;text-align:center;transition:transform 0.2s}
+.status-item:hover{transform:translateY(-1px)}
+.status-item.saved{border-left:4px solid #5b8cff}
+.status-item.applied{border-left:4px solid #22c55e}
+.status-item.interview{border-left:4px solid #f59e0b}
+.status-item.offer{border-left:4px solid #10b981}
+.status-item.rejected{border-left:4px solid #ef4444}
+.status-label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.status-count{display:block;font-size:20px;font-weight:700;color:var(--text)}
+.activity-list{display:flex;flex-direction:column;gap:12px}
+.activity-item{display:flex;align-items:flex-start;gap:12px;padding:12px;background:#101836;border:1px solid #1d2747;border-radius:8px}
+.activity-icon{font-size:20px;opacity:0.8}
+.activity-content{flex:1}
+.activity-content p{margin:0 0 4px 0;color:var(--text)}
+.activity-time{font-size:12px;color:var(--muted)}
+.nav-link{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px;transition:all 0.2s}
+.nav-link:hover{color:var(--text);background:#1e2744}
+.nav-link.active{color:var(--accent);background:#1e2744}
+.status-select{padding:6px 10px;border-radius:6px;border:1px solid #27304d;background:#0f1730;color:var(--text);font-size:12px;cursor:pointer;transition:border-color 0.2s}
+.status-select:focus{outline:none;border-color:var(--accent)}
+.status-select option{background:#0f1730;color:var(--text)}
+
+/* Job card enhancements */
+.job-category{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.job-category.Frontend{background:#e3f2fd;color:#1976d2}
+.job-category.Backend{background:#f3e5f5;color:#7b1fa2}
+.job-category.Full-stack{background:#e8f5e8;color:#388e3c}
+.job-category.DevOps{background:#fff3e0;color:#f57c00}
+.job-category.Data{background:#fce4ec;color:#c2185b}
+.job-category.Mobile{background:#e0f2f1;color:#00695c}
+.job-category.Other{background:#f5f5f5;color:#616161}
+.job-priority{display:inline-block;padding:2px 6px;border-radius:8px;font-size:10px;font-weight:600;text-transform:uppercase;margin-left:8px}
+.job-priority.HIGH{background:#ffebee;color:#d32f2f}
+.job-priority.MEDIUM{background:#fff8e1;color:#f57c00}
+.job-priority.LOW{background:#e8f5e8;color:#388e3c}
+.job-deadline{font-size:12px;color:var(--muted);margin-top:4px}
+.job-deadline.urgent{color:#ff6b6b;font-weight:600}
+.job-salary{font-size:12px;color:var(--accent);font-weight:600;margin-top:4px}
+
+/* Deadline notifications */
+.deadline-list{display:flex;flex-direction:column;gap:12px}
+.deadline-item{display:flex;align-items:flex-start;gap:12px;padding:12px;background:#101836;border:1px solid #1d2747;border-radius:8px;transition:transform 0.2s}
+.deadline-item:hover{transform:translateY(-1px)}
+.deadline-item.urgent{border-left:4px solid #ef4444;background:#2f0d12}
+.deadline-item.warning{border-left:4px solid #f59e0b;background:#2f2b0d}
+.deadline-icon{font-size:20px;opacity:0.8}
+.deadline-content{flex:1}
+.deadline-content p{margin:0 0 4px 0;color:var(--text);font-weight:600}
+.deadline-time{font-size:12px;color:var(--muted)}
+.deadline-actions{display:flex;gap:8px;margin-top:8px}
+.deadline-btn{padding:4px 8px;background:var(--accent);color:white;border:none;border-radius:4px;font-size:11px;cursor:pointer;transition:background 0.2s}
+.deadline-btn:hover{background:#4a7cff}
+.deadline-btn.secondary{background:transparent;border:1px solid #2a355a;color:var(--muted)}
+.deadline-btn.secondary:hover{background:#1e2744;color:var(--text)}
+
+@media (max-width: 900px){
+  main{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2, 1fr)}
+  .status-bar{flex-direction:column}
+  .status-item{min-width:auto}
+}
+

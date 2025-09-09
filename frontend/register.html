@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - CareerBuddy</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-card">
+        <header class="auth-header">
+          <h1>CareerBuddy</h1>
+          <p>Create your account</p>
+        </header>
+
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" placeholder="Enter your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password (min 8 characters)" required minlength="8" />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+          </div>
+
+          <button type="submit" class="auth-button">Create Account</button>
+          
+          <div class="auth-links">
+            <p>Already have an account? <a href="login.html">Sign in here</a></p>
+          </div>
+        </form>
+
+        <div id="error-message" class="error-message hidden"></div>
+        <div id="success-message" class="success-message hidden"></div>
+      </div>
+    </div>
+
+    <script src="./auth.js"></script>
+  </body>
+</html>

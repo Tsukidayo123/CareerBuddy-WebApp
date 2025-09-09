@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - CareerBuddy</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎯 CareerBuddy</h1>
+      <nav id="auth-nav">
+        <div id="user-info" class="hidden">
+          <span id="user-email"></span>
+          <a href="index.html" class="nav-link">📋 Jobs</a>
+          <a href="dashboard.html" class="nav-link active">📊 Dashboard</a>
+          <button id="logout-btn">Logout</button>
+        </div>
+        <div id="login-prompt" class="hidden">
+          <p>Welcome! Please <a href="login.html">login</a> to start tracking your career journey</p>
+        </div>
+      </nav>
+    </header>
+
+    <main class="dashboard-main">
+      <!-- Overview Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💼</div>
+          <div class="stat-content">
+            <h3 id="total-jobs">0</h3>
+            <p>Total Jobs Saved</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-content">
+            <h3 id="active-applications">0</h3>
+            <p>Active Applications</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-content">
+            <h3 id="completed-applications">0</h3>
+            <p>Applications Completed</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-content">
+            <h3 id="success-rate">0%</h3>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Application Status Chart -->
+      <section class="panel">
+        <h2>📊 Application Status Breakdown</h2>
+        <p class="panel-subtitle">Your application pipeline at a glance</p>
+        <div class="status-chart">
+          <div class="status-bar">
+            <div class="status-item saved">
+              <span class="status-label">Saved</span>
+              <span class="status-count" id="count-saved">0</span>
+            </div>
+            <div class="status-item applied">
+              <span class="status-label">Applied</span>
+              <span class="status-count" id="count-applied">0</span>
+            </div>
+            <div class="status-item interview">
+              <span class="status-label">Interview</span>
+              <span class="status-count" id="count-interview">0</span>
+            </div>
+            <div class="status-item offer">
+              <span class="status-label">Offer</span>
+              <span class="status-count" id="count-offer">0</span>
+            </div>
+            <div class="status-item rejected">
+              <span class="status-label">Rejected</span>
+              <span class="status-count" id="count-rejected">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Deadlines -->
+      <section class="panel">
+        <h2>⏰ Upcoming Deadlines</h2>
+        <p class="panel-subtitle">Don't miss these application deadlines</p>
+        <div id="upcoming-deadlines" class="deadline-list">
+          <div class="deadline-item">
+            <div class="deadline-icon">📅</div>
+            <div class="deadline-content">
+              <p>No upcoming deadlines</p>
+              <span class="deadline-time">Add deadlines to your jobs to see them here</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Activity -->
+      <section class="panel">
+        <h2>📅 Recent Activity</h2>
+        <p class="panel-subtitle">Your latest job hunting progress</p>
+        <div id="recent-activity" class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">🎉</div>
+            <div class="activity-content">
+              <p>Welcome to CareerBuddy! Start by adding your first job.</p>
+              <span class="activity-time">Just now</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <small>Built with FastAPI + Vanilla JS. Secure by default.</small>
+    </footer>
+
+    <script src="./dashboard.js"></script>
+  </body>
+</html>
